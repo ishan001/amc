@@ -1,0 +1,30 @@
+.MessageBoxOkAll
+{
+	display:block;	
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	color:#339900;
+	text-align:left;
+	
+}
+.MessageBoxErrorAll
+{
+	display:block;	
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#CC0000;
+	padding-top:3px;	
+	text-align:left;
+}
+.MessageBoxWarningAll
+{
+	display:block;	
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	font-weight:normal;
+	color:#CC6600;
+	text-align:left;
+	
+	
+}

@@ -1,0 +1,11 @@
+
+# Options All and FollowSymLinks are disabled on this server.
+# FollowSymLinks is automatically replaced to SymLinksIfOwnerMatch, All is changed heuristically.
+Options +SymLinksIfOwnerMatch
+
+RewriteEngine On
+RewriteBase / 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)\?*$ curriculum/index.php?_route_=$1 [L,QSA]
+

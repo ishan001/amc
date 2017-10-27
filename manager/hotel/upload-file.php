@@ -1,0 +1,27 @@
+<?php
+session_start();
+include ("../_system/_config/config.php");
+require_once(REAL_PATH.'_system/_class/accommodation.class.php');
+require_once(REAL_PATH.'_system/_database/mysql.php');
+require_once(REAL_PATH.'_system/_class/image_thumb.php');
+
+$front_name = $_FILES['uploadfile']['name'];
+
+$key=strtolower(substr(strrchr($_FILES['uploadfile']['name'], "."), 1));
+$key=str_replace("jpeg","jpg",$key);
+$strName = substr($_FILES['uploadfile']['name'], 0, -strlen(".".$key)); 			
+$newname=str_replace(" ","-",$front_name);
+$filename = $strName.time().".".$key;
+
+$uploadfile ="../../upload/hotel/thumb/".$filename;
+createThumb($_FILES['uploadfile']['tmp_name'],$uploadfile,101,71,$key);
+
+$uploadfile ="../../upload/hotel/".$filename;
+createThumb($_FILES['uploadfile']['tmp_name'],$uploadfile,800,600,$key);
+
+$sql = " INSERT INTO hotel_images SET HI_H_ID = '".$_REQUEST['H_ID']."', HI_NAME = '".$filename."' ";
+$res = MySQL :: query($sql);
+
+$id = MySQL :: getLastId();
+echo $filename.",".$id;
+?>

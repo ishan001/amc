@@ -1,0 +1,31 @@
+
+form.cmxform label.error, label.error {
+	/* remove the next line when you have trouble in IE6 with labels in list */
+		display:inline-block;
+		color:#d54e4e;
+		background:transparent url(../img/th_green/bk_field_err.png) repeat-y top right; 
+		width:auto;
+}
+input.error { border: 1px  solid #F8A3A3; margin-bottom:3px;
+ }
+textarea.error { border: 1px  solid #F8A3A3; margin-bottom:3px; }
+select.error { border: 1px  solid #F8A3A3; margin-bottom:3px; }
+input.error[type="checkbox"]{
+outline: 2px solid #F8A3A3
+}
+.commonError {
+	color: #EA5200;
+	font-style: italic;
+	font-weight: bold;
+	background:url("../images/unchecked.gif") no-repeat 0px 0px;
+	padding-left: 16px;
+ 	padding-bottom: 2px;
+	display:none;
+	margin-top:10px;
+	margin-left:10px;
+
+}
+.green {
+	color:#390;
+	
+}
